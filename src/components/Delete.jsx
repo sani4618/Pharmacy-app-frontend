@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navigationbar from './Navigationbar'
 
 const Delete = () => {
+    const [NewDelete,SetNewDelete]=useState(
+        {
+            medicinename:"",
+        }
+    )
+    const ReadDelete=(event)=>{
+        SetNewDelete({...NewDelete,[event.target.name]:event.target.value})
+    }
+    const DisplayDelete=()=>{
+        console.log(NewDelete)
+    }
   return (
     <div>
         <Navigationbar/>
@@ -11,10 +22,10 @@ const Delete = () => {
                 <div className="row g-3">
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label htmlFor="" className="form label">Medicine Name</label>
-                    <input type="text" className="form-control" />
+                    <input type="text" name="medicinename" value={NewDelete.medicinename} className="form-control" onChange={ReadDelete}/>
                     </div>
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <button className="btn btn-success">Delete</button>
+                        <button onClick={DisplayDelete} className="btn btn-success">Delete</button>
                     </div>
                 </div>
                 </div>

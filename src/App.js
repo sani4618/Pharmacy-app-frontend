@@ -6,6 +6,7 @@ import Addmedicine from './components/Addmedicine';
 import Search from './components/Search';
 import Delete from './components/Delete';
 import Viewall from './components/Viewall';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/search" exact element={<Search/>}/>
         <Route path="/delete" exect element={<Delete/>}/>
         <Route path="/view" exact element={<Viewall/>}/>
+        <Route path="/login" exact element={<Login/>}/>
       </Routes>
       </BrowserRouter>
       
